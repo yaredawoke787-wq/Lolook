@@ -14,7 +14,7 @@ android {
   compileSdk = 36
 
   defaultConfig {
-    applicationId = "com.tekegift.app"
+    applicationId = "com.tekegift.admin"
     minSdk = 24
     targetSdk = 35
     versionCode = 1
@@ -56,6 +56,7 @@ android {
       signingConfig = signingConfigs.getByName("release")
     }
     debug {
+      signingConfig = signingConfigs.getByName("debugConfig")
     }
   }
   compileOptions {

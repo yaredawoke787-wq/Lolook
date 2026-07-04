@@ -339,6 +339,56 @@ fun ProfileScreen(
             }
         }
 
+        // 5. Admin Console Entrance
+        Spacer(modifier = Modifier.height(20.dp))
+        GlassCard(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(20.dp),
+            backgroundAlpha = 0.12f,
+            glowRadius = 6.dp,
+            glowColor = LuxuryGold.copy(alpha = 0.15f),
+            onClick = {
+                viewModel.isAdminConsoleOpen = true
+            }
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(18.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = "Admin Console",
+                        tint = LuxuryGold,
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Spacer(modifier = Modifier.width(12.dp))
+                    Column {
+                        Text(
+                            text = "Teke Man Promotion Admin",
+                            color = PureWhite,
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "Manage products & video streams",
+                            color = PureWhite.copy(alpha = 0.5f),
+                            fontSize = 11.sp
+                        )
+                    }
+                }
+                Icon(
+                    imageVector = Icons.Default.ChevronRight,
+                    contentDescription = "Open",
+                    tint = LuxuryGold,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+        }
+        
         Spacer(modifier = Modifier.height(20.dp))
     }
 }

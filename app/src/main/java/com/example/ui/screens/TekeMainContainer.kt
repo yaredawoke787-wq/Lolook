@@ -208,6 +208,19 @@ fun TekeMainContainer(
             }
         }
 
+        // 4. Immersive Admin Console Overlay
+        AnimatedVisibility(
+            visible = viewModel.isAdminConsoleOpen,
+            enter = slideInVertically(initialOffsetY = { it }) + fadeIn(),
+            exit = slideOutVertically(targetOffsetY = { it }) + fadeOut(),
+            modifier = Modifier.fillMaxSize()
+        ) {
+            AdminConsoleOverlay(
+                viewModel = viewModel,
+                onDismiss = { viewModel.isAdminConsoleOpen = false }
+            )
+        }
+
     }
 }
 
